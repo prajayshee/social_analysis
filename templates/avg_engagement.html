@@ -1,0 +1,32 @@
+<!-- templates/avg_engagement.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Engagement</title>
+</head>
+<body>
+    <h1>Average Engagement</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Post Type</th>
+                <th>Likes</th>
+                <th>Shares</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.post_type }}</td>
+                    <td>{{ item.avg_likes }}</td>
+                    <td>{{ item.avg_shares }}</td>
+                    <td>{{ item.avg_comments }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

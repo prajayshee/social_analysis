@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock %}</title>
+    
+    <!-- Load static files -->
+    {% load static %}
+    
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Common header (optional) -->
+    <header>
+        <h1>My Django Application</h1>
+        <nav>
+            <a href="{% url 'avg_engagement' %}">Avg Engagement</a> |
+            <a href="{% url 'get_posts_by_type' 'text' %}">Posts by Type</a>
+        </nav>
+    </header>
+
+    <!-- This is where page-specific content will go -->
+    <main>
+        {% block content %}
+        <!-- Content will be inserted here in child templates -->
+        {% endblock %}
+    </main>
+
+    <!-- Common footer (optional) -->
+    <footer>
+        <p>&copy; 2025 My Django App</p>
+    </footer>
+</body>
+</html>

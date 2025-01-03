@@ -1,9 +1,93 @@
-body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
+/* style.css */
 
-h1 {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2, h3 {
     color: #333;
-    text-align: center;
-}
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Posts Section */
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 20px);
+    min-width: 250px;
+  }
+  
+  .post-card h4 {
+    color: #007bff;
+    font-size: 1.2rem;
+  }
+  
+  .post-card p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    .post-card {
+      flex: 1 1 calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .post-card {
+      flex: 1 1 100%;
+    }
+  
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    h2, h3 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 5px;
+    }
+  
+    .post-card h4 {
+      font-size: 1rem;
+    }
+  
+    .post-card p {
+      font-size: 0.8rem;
+    }
+  }
+  

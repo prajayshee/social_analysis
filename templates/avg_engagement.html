@@ -7,26 +7,39 @@
     <title>Average Engagement</title>
 </head>
 <body>
-    <h1>Average Engagement</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Post Type</th>
-                <th>Likes</th>
-                <th>Shares</th>
-                <th>Comments</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in data %}
-                <tr>
-                    <td>{{ item.post_type }}</td>
-                    <td>{{ item.avg_likes }}</td>
-                    <td>{{ item.avg_shares }}</td>
-                    <td>{{ item.avg_comments }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    {% extends 'base.html' %}
+
+    {% block title %}Average Engagement{% endblock %}
+
+    {% block content %}
+    <div class="container">
+        <h2>Average Engagement Metrics</h2>
+        <p>Data about average engagement will be displayed here.</p>
+
+        <div class="table-container">
+            <h3>Average Engagement by Post Type</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Post Type</th>
+                        <th>Likes</th>
+                        <th>Shares</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                    <tr>
+                        <td>{{ item.post_type }}</td>
+                        <td>{{ item.avg_likes }}</td>
+                        <td>{{ item.avg_shares }}</td>
+                        <td>{{ item.avg_comments }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
 </body>
 </html>

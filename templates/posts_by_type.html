@@ -4,14 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Posts by Type</title>
 </head>
 <body>
-    <h1>Posts by Type</h1>
-    <ul>
-        {% for post in posts %}
-            <li>{{ post.title }} - {{ post.content }}</li>
-        {% endfor %}
-    </ul>
+    {% extends 'base.html' %}
+
+    {% block title %}Posts by Type{% endblock %}
+    
+    {% block content %}
+        <h2>Posts of Type: {{ post_type }}</h2>
+    
+        {% if posts %}
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <strong>Post Type:</strong> {{ post.post_type }}<br>
+                        <strong>Likes:</strong> {{ post.likes }}<br>
+                        <strong>Shares:</strong> {{ post.shares }}<br>
+                        <strong>Comments:</strong> {{ post.comments }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ message }}</p>
+        {% endif %}
+    {% endblock %}
+    
+
 </body>
 </html>

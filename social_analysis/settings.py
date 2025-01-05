@@ -127,3 +127,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ASTRA_CLIENT_ID= 'GjvgMidBZzlCJkOKNvJsOIAi'
+ASTRA_CLIENT_SECRET= "P1SnjiRYPNOtvcQGb6Tkpb-guz7n.HXQ+Y0LGC.MghObUtkFKTBhEJrye0fUp3T-zksA9ZEToMsqWMHM4JNbEZ0qHM2ybYOUXhzGGQtSDSENE,w4ozGCNN1ouNu96bBn"
+SECURE_CONNECT_BUNDLE_PATH= "D:\SmartMind Hackathon\env\social_analysis\python_project\secure-connect-asap.zipP1SnjiRYPNOtvcQGb6Tkpb"

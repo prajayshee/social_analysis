@@ -10,27 +10,112 @@
     
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <style>
+        /* Simple styling for the form and page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section input {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
+        }
+
+        .form-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-section button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <!-- Common header (optional) -->
-    <header>
-        <h1>My Django Application</h1>
-        <nav>
-            <a href="{% url 'avg_engagement' %}">Avg Engagement</a> |
-            <a href="{% url 'get_posts_by_type' 'text' %}">Posts by Type</a>
-        </nav>
-    </header>
+ <!-- Common header -->
+ <header>
+    <h1>Social Media Performance Analysis</h1>
+    <nav>
+        <a href="{% url 'avg_engagement' %}">Avg Engagement</a> |
+        <a href="{% url 'get_posts_by_type' post_type='example_type' %}">View Posts</a>
+    </nav>        
+</header>
 
-    <!-- This is where page-specific content will go -->
-    <main>
-        {% block content %}
-        <!-- Content will be inserted here in child templates -->
-        {% endblock %}
-    </main>
+<!-- Main content section -->
+<main>
+    {% block content %}
+    <section class="form-section">
+        <h2>Search Posts by Type</h2>
+        <p>Enter a post type (e.g., 'text', 'static', 'carousel') to filter posts:</p>
+        <!-- Form for searching posts by type -->
+        <form method="GET" action="{% url 'search_posts_by_type' %}">
+            <label for="post_type">Post Type:</label>
+            <input type="text" id="post_type" name="post_type" placeholder="Enter post type" required>
+            <button type="submit">Search</button>
+        </form>
+    </section>
 
-    <!-- Common footer (optional) -->
-    <footer>
-        <p>&copy; 2025 My Django App</p>
-    </footer>
+    <!-- Add logic to display search results (if any) -->
+    {% if posts %}
+        <section>
+            <h3>Results for Post Type: {{ post_type }}</h3>
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <strong>{{ post.post_type }}</strong><br>
+                        Likes: {{ post.likes }} | Shares: {{ post.shares }} | Comments: {{ post.comments }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% elif error %}
+        <section>
+            <p>{{ error }}</p>
+        </section>
+    {% endif %}
+    {% endblock %}
+</main>
+
+<!-- Footer section -->
+<footer>
+    <p style="text-align: center;">&copy; 2025 My Django App</p>
+</footer>
 </body>
 </html>

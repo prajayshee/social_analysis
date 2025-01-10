@@ -20,8 +20,6 @@ Social Media Insights Generator
   Cassandra (via DataStax Astra DB)
   Django 4.2+
   OpenAI API Key
-  ## Video Demonstration
-  Watch the project demonstration on YouTube: [Video Link](https://youtu.be/your-video-id)
 
 5. Usage
   Average Engagement Metrics
@@ -34,7 +32,7 @@ Social Media Insights Generator
   Receive AI-generated insights for specific posts based on their engagement data.
 
 6. Demo Video
-  Watch the project demonstration on YouTube: https://youtu.be/39pnFoI5zF8
+   Watch the project demonstration on YouTube: https://youtu.be/39pnFoI5zF8
 
 7. Acknowledgments
   Level Supermind Hackathon: For the opportunity to build and showcase this project.

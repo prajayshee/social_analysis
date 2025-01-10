@@ -34,7 +34,7 @@ Social Media Insights Generator
   Receive AI-generated insights for specific posts based on their engagement data.
 
 6. Demo Video
-  Watch the project demonstration on YouTube:
+  Watch the project demonstration on YouTube: https://youtu.be/39pnFoI5zF8
 
 7. Acknowledgments
   Level Supermind Hackathon: For the opportunity to build and showcase this project.
